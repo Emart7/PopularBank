@@ -3,6 +3,9 @@ export class Cuenta {
   #saldo;
 
   constructor(tipo, cliente, numero, agencia, saldo) {
+    if (this.constructor == Cuenta){
+      throw new Error('No se puede instanciar la clase Cuenta');
+    }
     this.tipo = tipo;
     this.#cliente = cliente;
     this.numero = numero;
@@ -18,26 +21,6 @@ export class Cuenta {
     return this.#cliente;
   }
 
-  set numero(valor) {
-    this.#numero = valor;
-  }
-
-  get numero() {
-    return this.#numero;
-  }
-
-  set agencia(valor) {
-    this.#agencia = valor;
-  }
-
-  get agencia() {
-    return this.#agencia;
-  }
-
-  get saldo() {
-    return this.#saldo;
-  }
-
   get cantidadCuentas() {
     return this.cantidadCuentas;
   }
@@ -48,7 +31,8 @@ export class Cuenta {
   }
 
   retiroDeCuenta(valor) {
-    _retiroDeCuenta(valor,0);
+    //Metodo abstracto
+    throw new Error('Debe implementar el metodo retiroDeCuenta en su clase.');
   }
   
   _retiroDeCuenta(valor, comision) {
@@ -58,6 +42,10 @@ export class Cuenta {
   }
 
   verSaldo() {
+    return this._verSaldo();
+  }
+  
+  _verSaldo() {
     return this.#saldo;
   }
 
