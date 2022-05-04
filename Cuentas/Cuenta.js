@@ -2,11 +2,10 @@ export class Cuenta {
   #cliente;
   #saldo;
 
-  constructor(tipo, cliente, numero, agencia, saldo) {
+  constructor(cliente, numero, agencia, saldo) {
     if (this.constructor == Cuenta){
       throw new Error('No se puede instanciar la clase Cuenta');
     }
-    this.tipo = tipo;
     this.#cliente = cliente;
     this.numero = numero;
     this.agencia = agencia;
@@ -40,12 +39,8 @@ export class Cuenta {
     if (valor <= this.#saldo) this.#saldo -= valor;
     return this.#saldo;
   }
-
-  verSaldo() {
-    return this._verSaldo();
-  }
   
-  _verSaldo() {
+  verSaldo() {
     return this.#saldo;
   }
 

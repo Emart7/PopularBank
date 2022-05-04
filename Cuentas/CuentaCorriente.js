@@ -6,7 +6,6 @@ export class CuentaCorriente extends Cuenta {
   constructor(cliente, numero, agencia) {
     super(cliente, numero, agencia, 0);
     CuentaCorriente.cantidadCuentas++;
-    // this.cantidadCuentas = this.cantidadCuentas;
   }
 
   retiroDeCuenta(valor) {
