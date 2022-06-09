@@ -5,6 +5,7 @@ import { Cliente } from "./Cliente.js";
 import { Empleado } from "./Empleados/Empleado.js";
 import { Autenticacion } from "./Autenticacion.js";
 //Se crea el package.json con el comando 'npm init' desde cmd.
+//+
 
 const cliente1 = new Cliente("Juan", "12345678", "12345678-9");
 const cliente2 = new Cliente("Andres", "123456789", "12345678-2");
